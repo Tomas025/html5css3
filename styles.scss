@@ -95,16 +95,17 @@ $breakpoints: (xs: 0, //Smartphones em modo retrato
     padding: 3vw;
 
     h2 {
-        font-size: 300%;
+        font-size: 3rem;
     }
 
     h3 {
-        font-size: 200%;
+        font-size: 2rem;
     }
 
     p {
+        text-indent: 80px;
         text-align: justify;
-        font-size: 120%;
+        font-size: 1rem;
         font-family: 'Roboto';
         font-weight: bold
     }
@@ -199,10 +200,6 @@ $breakpoints: (xs: 0, //Smartphones em modo retrato
 
 #HTML {
     background: $gradienteHTML;
-    #LogoHTML {
-        width: 25vw;
-        height: 25vw;
-    }
 }
 
 #CSS {
@@ -213,6 +210,27 @@ $breakpoints: (xs: 0, //Smartphones em modo retrato
     background: $gradienteJS;
 }
 
+#LogoHTML {
+    img {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+#LogoCSS {
+    img {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+#LogoJavaScript {
+    img {
+        height: 300px;
+        width: 300px;
+    }
+}
+
 #LinksUteis {
     background: $gradienteLinks;
 
@@ -221,12 +239,12 @@ $breakpoints: (xs: 0, //Smartphones em modo retrato
     }
 
     h3 {
-        font-size: 200%;
+        font-size: 1.5rem;
     }
 
     li {
         a {
-            font-size: 150%;
+            font-size: 1.5rem;
             font-weight: bold;
         }
     }
@@ -258,29 +276,137 @@ section {
 
 
 //Smartphones em modo retrato
-@media (min-width: map-get($breakpoints, xs)) {
+@media (min-width: map-get($breakpoints, xs)) and (orientation: portrait) {
     html {
         font-size: 14px;
     }
+
+    #Destaque {
+        background-size: 280vw;
+    }
+
     #logo {
         width: 100px;
         height: 100px;
     }
 
+    #LogoHTML {
+        img {
+            height: 300px;
+            width: 300px;
+        }
+    }
+    #LogoCSS {
+        img {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    #LogoJavaScript {
+        img {
+            height: 300px;
+            width: 300px;
+        }
+    }
+    
+    
+    #LinksUteis {
+        height: 170vh;
+        align-items: flex-start;
+        h2 {
+            font-size: 3rem;
+        }
+        #Icones {
+            margin-left: 20px;
+            width: 200%;
+        }
+        h3 {
+            font-size: 2rem;
+            width: 330%;
+        }
+    }
+
+    #Titulo {
+        width: 100%;
+    }
+
     .menu {
         height: 50px;
+        
+        #traco3 {
+            height: 50px;
+            width: 50px;
+            margin-right: 5px;
+        }
 
         ul {
-            height: 50px;
+            display: none;
         }
+    }
+
+    .section-details {
+        width: 70vh;
+    }
+
+    .botao {
+        border-radius: 40px;
+    }
+    
+    main,
+    section {
+        height: 120vh;
+        text-align: center;
+        overflow: hidden;
+        
+        .alinharTop {
+            flex-direction: column;
+        }
+    }
+    
+    .rodape {
+        flex-direction: column-reverse;
     }
 }
 
 // Smartphones em modo paisagem
-@media (min-width: map-get($breakpoints, sm)) and (orientation: landscape) {}
+@media (min-width: map-get($breakpoints, sm)) and (orientation: landscape) {
+    html{
+        font-size: 14px;
+    }
+
+    #Destaque {
+        background-size: 200vw;
+    }
+    
+    .menu {
+        height: 130px;
+
+        ul {
+            height: 50px;
+            margin-top: 40px;
+        }
+        #traco3 {
+            display: none;
+        }
+    }
+    main,
+    section {
+        height: 80vh;
+        text-align: center;
+        overflow: hidden;
+    }
+    #Icones {
+        margin-left: 10px;
+        width: 200%;
+    }
+}
 
 // Tablets em modo retrato
 @media (min-width: map-get($breakpoints, sm)) and (orientation: portrait) {
+    html {
+        font-size: 17px;
+    }
     #logo {
         width: 200px;
         height: 200px;
@@ -292,11 +418,17 @@ section {
         ul {
             height: 100px;
         }
+        #traco3 {
+            display: none
+        }
     }
 }
 
 //Tablets em modo paisagem
-@media (min-width: map-get($breakpoints, md)) {
+@media (min-width: map-get($breakpoints, md)) and (orientation: landscape) {
+    html {
+        font-size: 17px;
+    }
     #logo {
         width: 200px;
         height: 200px;
@@ -331,4 +463,8 @@ section {
 }
 
 //Desktops com alta definição HD e FHD
-@media (min-width: map-get($breakpoints, xl)) {}
+@media (min-width: map-get($breakpoints, xl)) {
+    html {
+        font-size: 23px
+    }
+}

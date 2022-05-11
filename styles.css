@@ -91,16 +91,17 @@
 }
 
 .section-details h2 {
-  font-size: 300%;
+  font-size: 3rem;
 }
 
 .section-details h3 {
-  font-size: 200%;
+  font-size: 2rem;
 }
 
 .section-details p {
+  text-indent: 80px;
   text-align: justify;
-  font-size: 120%;
+  font-size: 1rem;
   font-family: 'Roboto';
   font-weight: bold;
 }
@@ -213,11 +214,6 @@
   background: linear-gradient(90deg, rgba(228, 77, 38, 0.8) 0%, rgba(241, 101, 41, 0.8) 100%);
 }
 
-#HTML #LogoHTML {
-  width: 25vw;
-  height: 25vw;
-}
-
 #CSS {
   background: -webkit-gradient(linear, left top, right top, from(rgba(38, 77, 228, 0.8)), to(rgba(41, 101, 241, 0.8)));
   background: linear-gradient(90deg, rgba(38, 77, 228, 0.8) 0%, rgba(41, 101, 241, 0.8) 100%);
@@ -226,6 +222,21 @@
 #JavaScript {
   background: -webkit-gradient(linear, left top, right top, from(rgba(229, 162, 40, 0.8)), to(rgba(241, 191, 38, 0.8)));
   background: linear-gradient(90deg, rgba(229, 162, 40, 0.8) 0%, rgba(241, 191, 38, 0.8) 100%);
+}
+
+#LogoHTML img {
+  height: 300px;
+  width: 300px;
+}
+
+#LogoCSS img {
+  height: 300px;
+  width: 300px;
+}
+
+#LogoJavaScript img {
+  height: 300px;
+  width: 300px;
 }
 
 #LinksUteis {
@@ -238,11 +249,11 @@
 }
 
 #LinksUteis h3 {
-  font-size: 200%;
+  font-size: 1.5rem;
 }
 
 #LinksUteis li a {
-  font-size: 150%;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -271,23 +282,120 @@ section {
   }
 }
 
-@media (min-width: 0) {
+@media (min-width: 0) and (orientation: portrait) {
   html {
     font-size: 14px;
+  }
+  #Destaque {
+    background-size: 280vw;
   }
   #logo {
     width: 100px;
     height: 100px;
   }
+  #LogoHTML img {
+    height: 300px;
+    width: 300px;
+  }
+  #LogoCSS img {
+    height: 300px;
+    width: 300px;
+  }
+  #LogoJavaScript img {
+    height: 300px;
+    width: 300px;
+  }
+  #LinksUteis {
+    height: 170vh;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #LinksUteis h2 {
+    font-size: 3rem;
+  }
+  #LinksUteis #Icones {
+    margin-left: 20px;
+    width: 200%;
+  }
+  #LinksUteis h3 {
+    font-size: 2rem;
+    width: 330%;
+  }
+  #Titulo {
+    width: 100%;
+  }
   .menu {
     height: 50px;
   }
+  .menu #traco3 {
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+  }
+  .menu ul {
+    display: none;
+  }
+  .section-details {
+    width: 70vh;
+  }
+  .botao {
+    border-radius: 40px;
+  }
+  main,
+  section {
+    height: 120vh;
+    text-align: center;
+    overflow: hidden;
+  }
+  main .alinharTop,
+  section .alinharTop {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .rodape {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 576px) and (orientation: landscape) {
+  html {
+    font-size: 14px;
+  }
+  #Destaque {
+    background-size: 200vw;
+  }
+  .menu {
+    height: 130px;
+  }
   .menu ul {
     height: 50px;
+    margin-top: 40px;
+  }
+  .menu #traco3 {
+    display: none;
+  }
+  main,
+  section {
+    height: 80vh;
+    text-align: center;
+    overflow: hidden;
+  }
+  #Icones {
+    margin-left: 10px;
+    width: 200%;
   }
 }
 
 @media (min-width: 576px) and (orientation: portrait) {
+  html {
+    font-size: 17px;
+  }
   #logo {
     width: 200px;
     height: 200px;
@@ -298,9 +406,15 @@ section {
   .menu ul {
     height: 100px;
   }
+  .menu #traco3 {
+    display: none;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape) {
+  html {
+    font-size: 17px;
+  }
   #logo {
     width: 200px;
     height: 200px;
@@ -326,6 +440,12 @@ section {
   }
   .menu ul {
     height: 130px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 23px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
